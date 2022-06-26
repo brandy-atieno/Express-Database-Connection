@@ -1,0 +1,11 @@
+ GET http://localhost:5000/localhost:5000/localhost:5000
+
+
+
+
+###
+GET http://localhost:5000/users/users
+###
+GET http://localhost:5000/user/ccarrattd@trellian.com
+###
+POST  http://localhost:5000/login 
