@@ -1,4 +1,4 @@
-const express=require('express')
+const express = require('express')
 const bodyparser = require('body-parser');
 const port=5000
 const server=express()
@@ -7,9 +7,22 @@ server.use(bodyparser.urlencoded({extended: true}));
 const {router}=require('./routes/users')
 
 server.use('/', router)
-server.use('/users', router)
-server.use('/user/:email', router)
-server.use('/login', router)
+server.use((req,res,next)=>{
+    const error=new  Error ('NOT FOUND');
+    error.status(404);
+    next(error);
+})
+server.use((error,req,res,next) => {
+            res.status( error.status || 500);
+            res.json({ 
+                error:
+                {
+                message:error.message}
+            })
+        });
+            
+
+
 
 
 

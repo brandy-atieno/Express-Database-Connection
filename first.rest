@@ -1,11 +1,26 @@
  GET http://localhost:5000/localhost:5000/localhost:5000
 
-
-
-
 ###
-GET http://localhost:5000/users/users
+GET http://localhost:5000/users
 ###
-GET http://localhost:5000/user/ccarrattd@trellian.com
+GET http://localhost:5000/user/SDFGYTHJ@GMAIL.COM
 ###
-POST  http://localhost:5000/login 
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+ "email": "SDFGYTHJ@GMAIL.COM",
+  "Password": "OIJHDFGTYHN"   
+} 
+###
+POST http://localhost:5000/createuser
+Content-Type: application/json
+
+{
+  "id":1,
+  "first_name":"Monty",
+  "last_name":"Jopp",
+  "email":"mjopp0@merriam-webster.com",
+  "gender":"Male",
+  "Password":"uehSLnl"
+}
